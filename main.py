@@ -1,6 +1,10 @@
 import webbrowser
+import random
+
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
+
+import AI
 
 root = Tk()
 
@@ -30,8 +34,13 @@ messageWindow.place(x=128, y=400, height=88, width=260)
 
 def send():
     if messageWindow.get():
-        chatWindow.insert(INSERT,"YOU : "+messageWindow.get()+"\n")
+        my_input = messageWindow.get()
+        chatWindow.insert(INSERT,"YOU : "+ my_input +"\n")
         messageWindow.delete(0, END)
+        #AI THINK
+        input = AI.send_message(AI.real(my_input.lower()))
+        if(input == "exit" or input == "stop"):
+            chatWindow.insert(INSERT,"BOT : Thank You very much and Good bye! \n")
 
         chatWindow.yview_pickplace("end")
     else:
