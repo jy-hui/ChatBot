@@ -36,8 +36,7 @@ def send():
         print("empty")
     print("clicked")
 
-Button = Button(root, text='Send', bg='blue', activebackground='light blue', width=12, height=5, font=('Arial', 20),
-                command=send)
+Button = Button(root, text='Send', bg='blue', activebackground='light blue', width=12, height=5, font=('Arial', 20), command=send)
 Button.place(x=6, y=400, height=88, width=120)
 
 
