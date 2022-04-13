@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 
 root.title('Chat Bot')
-
+root.frame()
 root.geometry('400x500')
 
 main_menu = Menu(root)
