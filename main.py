@@ -1,9 +1,10 @@
+import webbrowser
 from tkinter import *
 
 root = Tk()
 
 root.title('Chat Bot')
-root.frame()
+root.configure(bg='Black')
 root.geometry('400x500')
 
 main_menu = Menu(root)
@@ -18,13 +19,24 @@ main_menu.add_command(label='Edit')
 main_menu.add_command(label='Quit')
 root.config(menu=main_menu)
 
-chatWindow = Text(root, bd=1, bg='black', width=50, height=8)
-chatWindow.place(x=6, y=6, height=385, width=370)
+chatWindow = Text(root, bd=1, bg='white', width=50, height=8)
+chatWindow.place(x=5, y=5, height=385, width=370)
 
-messageWindow = Text(root, bg='black', width=30, height=4)
+messageWindow = Entry(root, bg='white', width=30)
 messageWindow.place(x=128, y=400, height=88, width=260)
 
-Button = Button(root, text='Send', bg='blue', activebackground='light blue', width=12, height=5, font=('Arial', 20))
+
+def send():
+    if messageWindow.get():
+        chatWindow.insert(INSERT,"YOU : "+messageWindow.get()+"\n")
+        messageWindow.delete(0, END)
+
+    else:
+        print("empty")
+    print("clicked")
+
+Button = Button(root, text='Send', bg='blue', activebackground='light blue', width=12, height=5, font=('Arial', 20),
+                command=send)
 Button.place(x=6, y=400, height=88, width=120)
 
 scrollbar = Scrollbar(root, command=chatWindow.yview())
