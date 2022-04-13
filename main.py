@@ -1,5 +1,6 @@
 import webbrowser
 from tkinter import *
+from tkinter.scrolledtext import ScrolledText
 
 root = Tk()
 
@@ -19,8 +20,8 @@ main_menu.add_command(label='Edit')
 main_menu.add_command(label='Quit')
 root.config(menu=main_menu)
 
-chatWindow = Text(root, bd=1, bg='white', width=50, height=8)
-chatWindow.place(x=5, y=5, height=385, width=370)
+chatWindow = ScrolledText(root, bd=1, bg='white', width=50, height=8)
+chatWindow.place(x=5, y=5, height=385, width=385)
 
 messageWindow = Entry(root, bg='white', width=30)
 messageWindow.place(x=128, y=400, height=88, width=260)
@@ -39,7 +40,6 @@ Button = Button(root, text='Send', bg='blue', activebackground='light blue', wid
                 command=send)
 Button.place(x=6, y=400, height=88, width=120)
 
-scrollbar = Scrollbar(root, command=chatWindow.yview())
-scrollbar.place(x=375, y=5, height=385)
+
 
 root.mainloop()
