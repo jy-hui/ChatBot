@@ -23,6 +23,7 @@ root.config(menu=main_menu)
 chatWindow = ScrolledText(root, bd=1, bg='white', width=50, height=8)
 chatWindow.place(x=5, y=5, height=385, width=385)
 
+
 messageWindow = Entry(root, bg='white', width=30)
 messageWindow.place(x=128, y=400, height=88, width=260)
 
@@ -32,6 +33,7 @@ def send():
         chatWindow.insert(INSERT,"YOU : "+messageWindow.get()+"\n")
         messageWindow.delete(0, END)
 
+        chatWindow.yview_pickplace("end")
     else:
         print("empty")
     print("clicked")
