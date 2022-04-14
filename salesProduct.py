@@ -1,4 +1,7 @@
 import random
+from tkinter import INSERT
+
+from main import chatWindow
 
 sorry = "Sorry, currently only sell gaming related \n     Chair, Table, LED Light and Computer Accessories"
 error = "I'm not understand what you mean, please tell me again?"
@@ -118,7 +121,7 @@ def check(text, name):
         title()
 
 
-def main():
+def sale():
     while 1:
         print("BOT: Hello dear customer, Our S3GF provide gaming related furnitures")
         title()
@@ -127,6 +130,3 @@ def main():
         my_input = my_input.lower()
         if my_input == "exit" or my_input == "stop":
             break
-
-
-main()
