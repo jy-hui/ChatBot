@@ -39,7 +39,7 @@ def real(xtext):
 def send_message(message):
     #print((message)) # if want block the ytext
     response = res(message)
-    print((response))
+    print(response)
 
 def customerservice():
     text = "BOT Jason : Welcome to Customer Service Module \n" +"            Any question for you? \n" + "            "
