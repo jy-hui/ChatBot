@@ -54,7 +54,7 @@ def productIs(xtext):
 def send_message(message):
     # print((message)) # if want block the ytext
     response = res(message)
-    print((response))
+    print(response)
 
 
 def title():
@@ -98,7 +98,7 @@ def check(text, name):
         send_message(text)
         num_input = input()
         for m in num_input:
-            if m.isdigit() == False:
+            if not m.isdigit():
                 send_message("7")
                 check("1", name)
                 break
