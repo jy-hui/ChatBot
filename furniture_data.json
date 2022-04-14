@@ -1,0 +1,105 @@
+{
+  "chair": [
+    {
+      "name": "TTRacing Maxx Gaming Chair",
+      "price": "RM 1099",
+      "color": "Black",
+      "height": "140-160cm",
+      "description": "The proud result of countless hours of designing and decisions made, the whole new Maxx Series Gaming Chair shall be exalted, providing the utmost comfort with its wide and tall body and seat. Refined craftsmanship culminating the ideal dressing for Maxx Series Gaming Chair. "
+    },{
+      "name": "TTRacing Maxx Air Threads Fabric",
+      "price": "RM 1149",
+      "color": "Black",
+      "height": "150-170cm",
+      "description": "The Maxx Venom new fish scales design allows you to bond perfectly with the chair with the right amount of resistance. Become the most dangerous being around with uninterrupted peak level performance. You will never want to leave this chair again."
+    },{
+      "name": "TTRacing Duo V3 Gaming Chair",
+      "price": "RM 359",
+      "color": "Black, Red",
+      "height": "120-130cm",
+      "description": "We pride ourselves calling Duo V3 the best entry gaming chair that you will find. The brand new Duo V3 comes with pristine face lift and equipped with top quality parts. With wider and taller body and seat, the Duo V3 is able to cater to most users, providing equal amount of comfort and pleasure sitting on this masterpiece. "
+    },
+    {
+      "name": "TTRacing Swift X 2020 Gaming Chair",
+      "price": "RM 599",
+      "color": "Black, Red",
+      "height": "150-180cm",
+      "description": "The champion upholstery, the Air Threads fabric is the perfect blend of smoothness, softness and breathability. Created meticulously from the best textile, down to the threads, creating an airy sensation in style. Braided to perfection, the Air Threads is made of crossing threads that deliver the right amount of resistance for uninterrupted top level performance. Maximized for long hours of cooling comfort made exclusively for the strivers."
+    },{
+      "name": "Vertagear  PL6000",
+      "price": "RM 1799",
+      "color": "Black, White, Blue",
+      "height": "150-170cm",
+      "description": "Industrial strength materials and thoughtful design provide extra room for comfort for those who desire more space or plan to spend extended periods in their gaming sessions."
+    }
+  ],
+  "table": [
+    {
+      "name": "L Shape Gaming Table",
+      "price": "RM 199",
+      "color": "Black, Red",
+      "size": "120x45x75cm",
+      "description": "Powder coat metal steel, melamine table top, waterproof, smooth Surface"
+    },
+   {
+      "name": "GTGAMEZ Z Series Gaming Table",
+      "price": "RM 269",
+      "color": "Black, Red, White",
+      "size": "120x55x75cm",
+      "description": " 3D Rounded Edges ; Carbon Fiber Surface ; Strong Structure ; High Load Bearing ; Sturdy Body & Leg Design ; Anti-Slip on the table leg to Prevent Scratched Floor"
+    },
+    {
+      "name": "GT-Ultra Lite Height Adjustable Gaming Desk",
+      "price": "RM 699",
+      "color": "Black",
+      "size": "110x60x118cm",
+      "description": "Height adjustable (73CM-118CM), Modern look & solid, strong structure leg, increase stability, Carbon-fiber texture tabletop ,Excellent load bearing, not shaking"
+    },
+    {
+      "name": "NILOR-K Type Gaming Table",
+      "price": "RM 189",
+      "color": "Black",
+      "size": "120x60x75cm",
+      "description": "This desk for gaming is specially designed for gamers, constructed by durable metal frame legs, this table for gaming not only looks cool and stylish, very solid and stable with no wobble."
+    },    {
+      "name": "R5 Premium LED Gaming Table",
+      "price": "RM 369",
+      "color": "Black, Red",
+      "size": "120x60x72cm",
+      "description": "This desk for gaming is specially designed for gamers, constructed by durable metal frame legs, this R-line table for gaming not only looks cool and stylish, very solid and stable with no wobble."
+    }
+  ],
+  "accessories": [
+    {
+      "name": "Neck Pillow",
+      "price": "RM 50",
+      "color": "Black, Yellow"
+   },
+    {
+      "name": "Lumbar Pillow",
+      "price": "RM 100",
+      "color": "Black, Yellow"
+   },
+    {
+      "name": "Desk Pad",
+      "price": "RM 50",
+      "color": "Black"
+   },      {
+      "name": "Chair Mat",
+      "price": "RM 100",
+      "color": "Black, Yellow"
+   },      {
+      "name": "Multi-purpose Leather Cleaner",
+      "price": "RM 99",
+      "color": "none"
+   },      {
+      "name": "Tomaz Gaming Floorpad",
+      "price": "RM 120",
+      "color": "Black, Red"
+   },      {
+      "name": "LED Strip light",
+      "price": "RM 10",
+      "color": "Rainbow"
+   }
+  ]
+}

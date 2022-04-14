@@ -1,5 +1,13 @@
 import random
+import json
 
+#read file
+product_json=open('furniture_data.json','r')
+product_data = product_json.read()
+product = json.loads(product_data)
+product_chair = product['chair']
+product_table = product['table']
+product_accessories = product['accessories']
 name = " Jason"
 GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey",)
 
@@ -56,146 +64,136 @@ respM1 = {
     "chair": [
         "This is all of our chair product,\n" +
         "            can ask any of this product\n" +
-        "            -> TTRacing Maxx\n" +
-        "            -> TTRacing Maxx Air Threads Fabric\n" +
-        "            -> TTRacing Duo V3\n" +
-        "            -> TTRacing Swift X 2020\n" +
-        "            -> Vertagear  PL6000\n"],
-    "table":[
+        "            -> " + product_chair[0].get("name") + "\n" +
+        "            -> " + product_chair[1].get("name") + "\n" +
+        "            -> " + product_chair[2].get("name") + "\n" +
+        "            -> " + product_chair[3].get("name") + "\n" +
+        "            -> " + product_chair[4].get("name") + "\n"],
+    "table": [
         "This is all of our table product,\n" +
         "            can ask any of this product\n" +
-        "            -> L Shape Gaming Table\n" +
-        "            -> GTGAMEZ Z Series Gaming Table\n" +
-        "            -> GT-Ultra Lite Height Adjustable Gaming Desk\n" +
-        "            -> NILOR-K Type Gaming Table\n" +
-        "            -> R5 Premium LED Gaming Table\n"],
+        "            -> " + product_table[0].get("name") + "\n" +
+        "            -> " + product_table[1].get("name") + "\n" +
+        "            -> " + product_table[2].get("name") + "\n" +
+        "            -> " + product_table[3].get("name") + "\n" +
+        "            -> " + product_table[4].get("name") + "\n"],
     "accessories": [
         "This is all of our accessories product,\n" +
         "            can ask any of this product\n" +
-        "            -> Neck Pillow\n" +
-        "            -> Lumbar Pillow\n" +
-        "            -> Desk Pad\n" +
-        "            -> Chair Mat\n" +
-        "            -> Multi-purpose Leather Cleaner\n" +
-        "            -> Tomaz Gaming Floorpad\n" +
-        "            -> LED Strip light\n"],
-    "TTRacing Maxx": [
-        "Name: TTRacing Maxx Gaming Chair\n" +
-        "            Price: RM 1099\n" +
-        "            Color:  Black\n" +
-        "            Height: 140-160cm\n" +
-        "            Description :\n" +
-        "The proud result of countless hours of designing and decisions made, the whole new Maxx Series Gaming Chair "
-        "shall be exalted, providing the utmost comfort with its wide and tall body and seat. Refined craftsmanship "
-        "culminating the ideal dressing for Maxx Series Gaming Chair.\n "
+        "            -> " + product_accessories[0].get("name") + "\n" +
+        "            -> " + product_accessories[1].get("name") + "\n" +
+        "            -> " + product_accessories[2].get("name") + "\n" +
+        "            -> " + product_accessories[3].get("name") + "\n" +
+        "            -> " + product_accessories[4].get("name") + "\n" +
+        "            -> " + product_accessories[5].get("name") + "\n" +
+        "            -> " + product_accessories[6].get("name") + "\n"
+    ],
+    "TTRacing Maxx Gaming Chair": [
+        "Name: " + product_chair[0].get("name") + "\n" +
+        "            Price: " + product_chair[0].get("price") + "\n" +
+        "            Color: " + product_chair[0].get("color") + "\n" +
+        "            Height: " + product_chair[0].get("height") + "\n" +
+        "            Description: \n" + product_chair[0].get("description") + "\n"
     ],
     "TTRacing Maxx Air Threads Fabric Gaming Chair": [
-        "Name: TTRacing Maxx Air Threads Fabric\n" +
-        "            Price: RM 1149\n" +
-        "            Color:  Black\n" +
-        "            Height: 150-170cm\n" +
-        "            Description :\n"+
-        "The Maxx Venom’s new fish scales design allows you to bond perfectly with the chair with the right amount of resistance. Become the most dangerous being around with uninterrupted peak level performance. You’ll never want to leave this chair again.\n"
+        "Name: " + product_chair[1].get("name") + "\n" +
+        "            Price: " + product_chair[1].get("price") + "\n" +
+        "            Color: " + product_chair[1].get("color") + "\n" +
+        "            Height: " + product_chair[1].get("height") + "\n" +
+        "            Description: \n" + product_chair[1].get("description") + "\n"
     ],
     "TTRacing Duo V3 Gaming Chair": [
-        "Name: TTRacing Duo V3 Gaming Chair\n" +
-        "            Price: RM 359\n" +
-        "            Color:  Black, Red\n" +
-        "            Height: 120-130cm\n" +
-        "            Description :\n" +
-        "We pride ourselves calling Duo V3 the best entry gaming chair that you will find. The brand new Duo V3 comes with pristine face lift and equipped with top quality parts. With wider and taller body and seat, the Duo V3 is able to cater to most users, providing equal amount of comfort and pleasure sitting on this masterpiece. "
-   ],
+        "Name: " + product_chair[2].get("name") + "\n" +
+        "            Price: " + product_chair[2].get("price") + "\n" +
+        "            Color: " + product_chair[2].get("color") + "\n" +
+        "            Height: " + product_chair[2].get("height") + "\n" +
+        "            Description: \n" + product_chair[2].get("description") + "\n"
+    ],
     "TTRacing Swift X 2020 Gaming Chair": [
-        "Name: TTRacing Swift X 2020 Gaming Chair\n" +
-        "            Price: RM 599\n" +
-        "            Color:  Black, Red\n" +
-        "            Height: 150-180cm\n" +
-        "            Description :\n" +
-        "The champion’s upholstery, the Air Threads fabric is the perfect blend of smoothness, softness and breathability. Created meticulously from the best textile, down to the threads, creating an airy sensation in style. Braided to perfection, the Air Threads is made of crossing threads that deliver the right amount of resistance for uninterrupted top level performance. Maximized for long hours of cooling comfort made exclusively for the strivers."
+        "Name: " + product_chair[3].get("name") + "\n" +
+        "            Price: " + product_chair[3].get("price") + "\n" +
+        "            Color: " + product_chair[3].get("color") + "\n" +
+        "            Height: " + product_chair[3].get("height") + "\n" +
+        "            Description: \n" + product_chair[3].get("description") + "\n"
     ],
     "Vertagear  PL6000": [
-        "Name: Vertagear  PL6000\n" +
-        "            Price: RM 1799\n" +
-        "            Color:  Black, White, Blue\n" +
-        "            Height: 150-170cm\n" +
-        "            Description :\n" +
-        "Industrial strength materials and thoughtful design provide extra room for comfort for those who desire more space or plan to spend extended periods in their gaming sessions."
-  ],
+        "Name: " + product_chair[4].get("name") + "\n" +
+        "            Price: " + product_chair[4].get("price") + "\n" +
+        "            Color: " + product_chair[4].get("color") + "\n" +
+        "            Height: " + product_chair[4].get("height") + "\n" +
+        "            Description: \n" + product_chair[4].get("description") + "\n"
+    ],
     "L Shape Gaming Table": [
-        "Name: L Shape Gaming Table\n" +
-        "            Price: RM 199\n" +
-        "            Color: Black, Red\n" +
-        "            Size: 120x45x75cm\n" +
-        "            Description :\n" +
-        "Powder coat metal steel, melamine table top, waterproof, smooth Surface"
+        "Name: " + product_table[0].get("name") + "\n" +
+        "            Price: " + product_table[0].get("price") + "\n" +
+        "            Color: " + product_table[0].get("color") + "\n" +
+        "            Size: " + product_table[0].get("size") + "\n" +
+        "            Description: \n" + product_table[0].get("description") + "\n"
     ],
     "GTGAMEZ Z Series Gaming Table": [
-        "Name: GTGAMEZ Z Series Gaming Table\n" +
-        "            Price: RM 269\n" +
-        "            Color: Black, Red, White\n" +
-        "            Size: 120x55x75cm\n" +
-        "            Description :\n" +
-        " 3D Rounded Edges ; Carbon Fiber Surface ; Strong Structure ; High Load Bearing ; Sturdy Body & Leg Design ; Anti-Slip on the table leg to Prevent Scratched Floor"
-   ],
+        "Name: " + product_table[1].get("name") + "\n" +
+        "            Price: " + product_table[1].get("price") + "\n" +
+        "            Color: " + product_table[1].get("color") + "\n" +
+        "            Size: " + product_table[1].get("size") + "\n" +
+        "            Description: \n" + product_table[1].get("description") + "\n"
+    ],
     "GT-Ultra Lite Height Adjustable Gaming Desk": [
-        "Name: GT-Ultra Lite Height Adjustable\n" +
-        "            Price: RM 699\n" +
-        "            Color: Black\n" +
-        "            Size: 110x60x118cm\n" +
-        "            Description :\n" +
-        "Height adjustable (73CM-118CM), Modern look & solid, Strong structure leg, increase stability, Carbon-fiber texture tabletop ,Excellent load bearing, not shaking"
-   ],
+        "Name: " + product_table[2].get("name") + "\n" +
+        "            Price: " + product_table[2].get("price") + "\n" +
+        "            Color: " + product_table[2].get("color") + "\n" +
+        "            Size: " + product_table[2].get("size") + "\n" +
+        "            Description: \n" + product_table[2].get("description") + "\n"
+    ],
     "NILOR-K Type Gaming Table": [
-        "Name: NILOR-K Type Gaming Table\n" +
-        "            Price: RM 189\n" +
-        "            Color: Black\n" +
-        "            Size: 120x60x75cm\n" +
-        "            Description :\n" +
-        "This desk for gaming is specially designed for gamers, constructed by durable metal frame legs, this table for gaming not only looks cool and stylish, very solid and stable with no wobble."
-  ],
+        "Name: " + product_table[3].get("name") + "\n" +
+        "            Price: " + product_table[3].get("price") + "\n" +
+        "            Color: " + product_table[3].get("color") + "\n" +
+        "            Size: " + product_table[3].get("size") + "\n" +
+        "            Description: \n" + product_table[3].get("description") + "\n"
+    ],
     "R5 Premium LED Gaming Table": [
-        "Name: R5 Premium LED Gaming Table\n" +
-        "            Price: RM 369 \n" +
-        "            Color: Black, Red\n" +
-        "            Size: 120x60x72cm\n" +
-        "            Description :\n" +
-        "This desk for gaming is specially designed for gamers, constructed by durable metal frame legs, this R-line table for gaming not only looks cool and stylish, very solid and stable with no wobble."
+        "Name: " + product_table[4].get("name") + "\n" +
+        "            Price: " + product_table[4].get("price") + "\n" +
+        "            Color: " + product_table[4].get("color") + "\n" +
+        "            Size: " + product_table[4].get("size") + "\n" +
+        "            Description: \n" + product_table[4].get("description") + "\n"
     ],
     "Neck Pillow": [
-        "Name: Neck Pillow\n" +
-        "            Price: RM 50 \n" +
-        "            Color: Black, Yellow\n"
+        "Name: " + product_accessories[0].get("name") + "\n" +
+        "            Price: " + product_accessories[0].get("price") + "\n" +
+        "            Color: " + product_accessories[0].get("color") + "\n"
     ],
     "Lumbar Pillow": [
-        "Name: Lumbar Pillow\n" +
-        "            Price: RM 100 \n" +
-        "            Color: Black, Yellow\n"
+        "Name: " + product_accessories[1].get("name") + "\n" +
+        "            Price: " + product_accessories[1].get("price") + "\n" +
+        "            Color: " + product_accessories[1].get("color") + "\n"
     ],
     "Desk Pad": [
-        "Name: Desk Pad\n" +
-        "            Price: RM 50 \n" +
-        "            Color: Black\n"
+        "Name: " + product_accessories[2].get("name") + "\n" +
+        "            Price: " + product_accessories[2].get("price") + "\n" +
+        "            Color: " + product_accessories[2].get("color") + "\n"
     ],
     "Chair Mat": [
-        "Name: Chair Mat\n" +
-        "            Price: RM 100 \n" +
-        "            Color: Black, Yellow\n"
+        "Name: " + product_accessories[3].get("name") + "\n" +
+        "            Price: " + product_accessories[3].get("price") + "\n" +
+        "            Color: " + product_accessories[3].get("color") + "\n"
     ],
     "Multi-purpose Leather Cleaner": [
-        "Name: Multi-purpose Leather Cleaner\n" +
-        "            Price: RM 99\n" +
-        "            Color: Black, Yellow\n" +
+        "Name: " + product_accessories[4].get("name") + "\n" +
+        "            Price: " + product_accessories[4].get("price") + "\n" +
+        "            Color: " + product_accessories[4].get("color") + "\n" +
         "            Description :\n" +
         "Is a spray cleaner that can clean your chair and table"
     ],
     "Tomaz Gaming Floorpad": [
-        "Name: Tomaz Gaming Floorpad\n" +
-        "            Price: RM 120 \n" +
-        "            Color: Black, Red\n"
+        "Name: " + product_accessories[5].get("name") + "\n" +
+        "            Price: " + product_accessories[5].get("price") + "\n" +
+        "            Color: " + product_accessories[5].get("color") + "\n"
     ],
     "LED Strip light": [
-        "Name: LED Strip light\n" +
-        "            Price: RM 10 \n"
+        "Name: " + product_accessories[6].get("name") + "\n" +
+        "            Price: " + product_accessories[6].get("price") + "\n" +
+        "            Color: " + product_accessories[6].get("color") + "\n"
     ],
     "i want to order": [
         "If you want order the product, you can back to menu and select Sales Module\n"
