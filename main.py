@@ -1,16 +1,15 @@
 import webbrowser
 import random
 import string
+import nltk
+import sys
+import os
 
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 from PIL import Image, ImageTk
 
 import AI
-
-name = "Jason"
-
-
 
 def start():
     text = "BOT JASON : Welcome to the S3GF Shop, \n" \
@@ -28,17 +27,20 @@ root = Tk()
 root.title('Smart 3 Gamers Furniture - Chatbot')
 root.configure(bg='Black')
 root.geometry('450x500')
-
+def restart_program():
+    """Restarts the current program.
+    Note: this function does not return. Any cleanup action (like
+    saving data) must be done before calling this function."""
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 main_menu = Menu(root)
 
-file_menu = Menu(root)
-file_menu.add_command(label='New..')
-file_menu.add_command(label='Save As..')
-file_menu.add_command(label='Edit..')
+file_menu = Menu(root, tearoff=False)
+file_menu.add_command(label='Restart', command=restart_program)
+file_menu.add_command(label='Quit',command=root.destroy)
 
-main_menu.add_cascade(label='File', menu=file_menu)
-main_menu.add_command(label='Edit')
-main_menu.add_command(label='Quit')
+main_menu.add_cascade(label='More', menu=file_menu)
+
 root.config(menu=main_menu)
 
 label1 = Label(root, text = "BOT JASON",bd=1, width=50, height=8,bg='black', fg='white', pady=10, padx=10, font=10)

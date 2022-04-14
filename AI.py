@@ -1,15 +1,26 @@
 import random
 
 name = " Jason"
+GREET_INPUTS = ("hello","hi","greetings","sup","what's up","hey",)
+
 
 isM1 = False
 isM2 = False
 isM3 = False
 
 resp = {
+
+    "hello":[
+        "hi","hey","*nods*", "hi there","hello","I am glad! You are talking to me."
+    ],
+
     "what's your name?": [
         "They call me {0}".format(name),
         "My name is the {0}".format(name)],
+
+    "how are you?": [
+        "I am feeling good. How about you?",
+        "Not so bad. How about you?"],
 
     "m1":[
         "Welcome to Product Module \n" + "            Any question for you? \n"
@@ -23,9 +34,12 @@ resp = {
     "m3": [
         "Welcome to Customer Service Module \n" +\
         "            Any question for you? \n" + \
-        "         1. Return and refund online order \n" +\
-        "         2. Corporate S3GF \n" +\
-        "         3. Contact Us \n"
+        "         -> Refund \n" +\
+        "         -> Corporate S3GF \n" +\
+        "         -> Contact Us \n" +\
+        "         -> More...\n"+\
+        "         ** Type 'back' to return to Home Page"
+
 
 
     ],
@@ -39,16 +53,21 @@ resp = {
     }
 
 respM1 = {
-    "Product": [
+    "product": [
         "product",]
 }
 respM2 = {
-    "Order": [
+    "order": [
         "order",]
 }
 respM3 = {
-    "Help":[
-        "help me",
+    "refund":[
+        " ",
+    ],
+    "how to contact to company?":[
+        "Contact Us at 012-12345678 for assistance. \n" +\
+        "           Email us at Smart3Gamers@gmail.com" +\
+        "           For more information : https://serious3gamers.wixsite.com/home",
     ]
 }
 def res(message):
@@ -119,10 +138,12 @@ def res(message):
     return bot_message
 
 def real(xtext):
-    if "name" in xtext:
+    if xtext in GREET_INPUTS:
+        ytext = "hello"
+    elif "name" in xtext:
         ytext = "what's your name?"
-    elif "weather" in xtext:
-        ytext = "what's today's weather?"
+    elif "contact" in xtext:
+        ytext = "how to contact to company?"
     elif "how are" in xtext:
         ytext = "how are you?"
     else:
