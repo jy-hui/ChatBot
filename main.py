@@ -1,5 +1,6 @@
 import webbrowser
 import random
+import string
 
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
@@ -43,6 +44,21 @@ def send_message(message):
     print((response))
     return response
 
+def start():
+    text = "BOT JASON : Welcome to the S3GF Shop, \n" \
+           "            I am the S3GF's Chatbot, Jason \n" \
+           "            Please choose one of the module task:\n" \
+           "            ~ Furniture Product Module -> Press 'm1'\n" \
+           "            ~ Take Order Module -> Press 'm2'\n" \
+           "            ~ Customer Service Module -> Press 'm3'\n"
+
+    return text
+
+
+
+
+
+
 root = Tk()
 
 root.title('Smart 3 Gamers Furniture - Chatbot')
@@ -71,11 +87,21 @@ messageWindow = Entry(root, bg='white', font = (20))
 messageWindow.place(x=5, y=400, height=40, width=350)
 
 def send():
+
     if messageWindow.get():
         my_input = messageWindow.get()
         chatWindow.insert(INSERT, "YOU       : " + my_input + "\n")
         messageWindow.delete(0, END)
         # AI THINK
+        if (my_input.lower()=="m1"):
+            isModule1 = True
+            isStart = False
+        if (my_input.lower()=="m2"):
+            isModule2 = True
+            isStart = False
+        if (my_input.lower()=="m3"):
+            isModule3 = True
+            isStart = False
         chatWindow.insert(INSERT, "BOT JASON : "+ send_message(real(my_input.lower())) +"\n")
         chatWindow.yview_pickplace("end")
     else:
@@ -90,6 +116,8 @@ image1 = PhotoImage(file='S3G.png')
 
 label2 = Label(root,image = image1,bg='black')
 label2.place(x=340,y=400)
+isStart = True
+if(isStart):
+    chatWindow.insert(INSERT, start() + "\n")
 
 root.mainloop()
-
