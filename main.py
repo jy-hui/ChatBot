@@ -13,12 +13,15 @@ import AI
 
 
 def start():
-    text = "BOT JASON : Welcome to the S3GF Shop, \n" \
+    text = "BOT JASON : Welcome to the S3GF Home Page, \n" \
            "            I am the S3GF's Chatbot, Jason \n" \
            "            Please choose one of the module task:\n" \
-           "            ~ Furniture Product Module\n -> Press 'm1'\n" \
-           "            ~ Sales Module\n -> Press 'm2'\n" \
-           "            ~ Customer Service Module\n -> Press 'm3'\n"
+           "            ~ Furniture Product Module\n" \
+           "                -> Press 'm1'\n" \
+           "            ~ Sales Module\n" \
+           "                -> Press 'm2'\n" \
+           "            ~ Customer Service Module\n" \
+           "                -> Press 'm3'\n"
 
     return text
 

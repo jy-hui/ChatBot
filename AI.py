@@ -8,6 +8,12 @@ product = json.loads(product_data)
 product_chair = product['chair']
 product_table = product['table']
 product_accessories = product['accessories']
+
+faq_json = open('FAQ.json', 'r')
+faq_data = faq_json.read()
+faq = json.loads(faq_data)
+faq_question = faq['FAQ']
+
 name = " Jason"
 GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey",)
 
@@ -67,12 +73,15 @@ resp = {
         "         -> More...\n" + \
         "         ** Type 'back' to return to Home Page\n\n"
     ],
-    "back": ["Welcome back to the S3GF Shop's Home Page, \n" \
+    "back": ["Welcome back to the S3GF's Home Page,\n" \
              "            I am the S3GF's Chatbot, Jason \n" \
              "            Please choose one of the module task:\n" \
-             "            ~ Furniture Product Module \n-> Press 'm1'\n" \
-             "            ~ Sales Module \n-> Press 'm2'\n" \
-             "            ~ Customer Service Module \n-> Press 'm3'\n"],
+             "            ~ Furniture Product Module \n"
+             "                  -> Press 'm1'\n" \
+             "            ~ Sales Module \n"
+             "                  -> Press 'm2'\n" \
+             "            ~ Customer Service Module \n"
+             "                  -> Press 'm3'\n"],
     "default": ["{0}".format(error)]
 }
 
@@ -290,14 +299,28 @@ respM2 = {
 
 respM3 = {
     "how soon will i receive my refund?": [
-        "How soon will I receive my refund?\n" + \
-        "Refunds will be done via the initial payment mode and may take up to 15 working days. Please note that "
-        "refund amount is subjected to conditions of the products.\n",
+        "\n\tFAQ : "+faq_question[0].get("question")+"\n\tANS : "+faq_question[0].get("answer"),
     ],
     "how to contact to company?": [
-        "Contact Us at 012-12345678 for assistance. \n" + \
-        "           Email us at Smart3Gamers@gmail.com\n" + \
-        "           For more information : https://serious3gamers.wixsite.com/home\n",
+        "\n\tFAQ : "+faq_question[1].get("question")+"\n\tANS : "+faq_question[1].get("answer"),
+    ],
+    "what should i do if my item is damaged?": [
+        "\n\tFAQ : "+faq_question[2].get("question")+"\n\tANS : "+faq_question[2].get("answer"),
+    ],
+    "are chemicals used in the manufacturing process of s3gf products?": [
+        "\n\tFAQ : "+faq_question[3].get("question")+"\n\tANS : "+faq_question[3].get("answer"),
+    ],
+    "do your products contain lead?": [
+        "\n\tFAQ : "+faq_question[4].get("question")+"\n\tANS : "+faq_question[4].get("answer"),
+    ],
+    "do you recycle products?": [
+        "\n\tFAQ : "+faq_question[5].get("question")+"\n\tANS : "+faq_question[5].get("answer"),
+    ],
+    "who owns the s3gf concept?": [
+        "\n\tFAQ : "+faq_question[6].get("question")+"\n\tANS : "+faq_question[6].get("answer"),
+    ],
+    "where is s3gf store?": [
+        "\n\tFAQ : "+faq_question[7].get("question")+"\n\tANS : "+faq_question[7].get("answer"),
     ]
 }
 
@@ -381,6 +404,18 @@ def real(xtext):
         ytext = "how are you?"
     elif "refund" in xtext:
         ytext = "how soon will i receive my refund?"
+    elif "damaged" in xtext:
+        ytext = "what should i do if my item is damaged?"
+    elif "chemical" in xtext:
+        ytext = "are chemicals used in the manufacturing process of s3gf products?"
+    elif "lead" in xtext:
+        ytext = "do your products contain lead?"
+    elif "recycle" in xtext:
+        ytext = "do you recycle products?"
+    elif "corporate" in xtext:
+        ytext = "who owns the s3gf concept?"
+    elif "where" in xtext:
+        ytext = "where is s3gf store?"
     elif "maxx" in xtext:
         ytext = "TTRacing Maxx Gaming Chair"
     elif "air threads" in xtext:
