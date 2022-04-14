@@ -33,11 +33,13 @@ def restart_program():
     saving data) must be done before calling this function."""
     python = sys.executable
     os.execl(python, python, * sys.argv)
+
+
 main_menu = Menu(root)
 
 file_menu = Menu(root, tearoff=False)
-file_menu.add_command(label='Restart', command=restart_program)
-file_menu.add_command(label='Quit',command=root.destroy)
+#file_menu.add_command(label='Restart', command=restart_program)
+#file_menu.add_command(label='Quit',command=root.destroy)
 
 main_menu.add_cascade(label='More', menu=file_menu)
 

@@ -3,7 +3,6 @@ import random
 name = " Jason"
 GREET_INPUTS = ("hello","hi","greetings","sup","what's up","hey",)
 
-
 isM1 = False
 isM2 = False
 isM3 = False
