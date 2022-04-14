@@ -58,12 +58,11 @@ resp = {
         "Welcome to Sales Module \n"
         "            What products you prefer to buy? \n"
         "            **Each person able buy max 10 products\n"
-        "            (Enter back to quit)\n"
+        "            (Enter alphabet twice, Eg. aa)\n"
         "            A.Chair \n"
         "            B.Table \n"
         "            C.Computer accessories\n"
-
-    ],
+        "         ** Type 'back' to return to Home Page"],
     "m3": [
         "Welcome to Customer Service Module ~\n" + \
         "            Any question for you? \n" + \
@@ -244,11 +243,32 @@ respM1 = {
 }
 respM2 = {
     "sales": ["sales"],
-    "aa": ["Total amount of chair to buy is?\n"
+    "aa": ["This is all of our chair product,\n" +
+        "            -> " + product_chair[0].get("name") + "\n" +
+        "            -> " + product_chair[1].get("name") + "\n" +
+        "            -> " + product_chair[2].get("name") + "\n" +
+        "            -> " + product_chair[3].get("name") + "\n" +
+        "            -> " + product_chair[4].get("name") + "\n" +
+           "Total amount of chair to buy is?\n"
            "            (Enter z + number)\n"],
-    "bb": ["Total amount of table to buy is?\n"
+    "bb": ["This is all of our table product,\n" +
+        "            -> " + product_table[0].get("name") + "\n" +
+        "            -> " + product_table[1].get("name") + "\n" +
+        "            -> " + product_table[2].get("name") + "\n" +
+        "            -> " + product_table[3].get("name") + "\n" +
+        "            -> " + product_table[4].get("name") + "\n" +
+           "Total amount of table to buy is?\n"
            "            (Enter y + number)\n"],
-    "s2": ["{0}".format(noStock)],
+    "s2": ["{0}".format(noStock) +
+           "This is all of our accessories product,\n" +
+           "            -> " + product_accessories[0].get("name") + "\n" +
+           "            -> " + product_accessories[1].get("name") + "\n" +
+           "            -> " + product_accessories[2].get("name") + "\n" +
+           "            -> " + product_accessories[3].get("name") + "\n" +
+           "            -> " + product_accessories[4].get("name") + "\n" +
+           "            -> " + product_accessories[5].get("name") + "\n" +
+           "            -> " + product_accessories[6].get("name") + "\n" +
+           "            Please come to our retails shop!\n"],
     "s3": ["{0}".format(serve)],
     "s4": ["{0}".format(sorry)],
     "z1": ["Total 1 of Chair is RM 120"],
