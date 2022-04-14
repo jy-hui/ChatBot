@@ -1,0 +1,14 @@
+{
+  "chairS": [
+    {
+      "name": "chair",
+      "rate": 10
+    }
+  ],
+  "tableS": [
+    {
+      "name": "table",
+      "rate": 20
+    }
+  ]
+}
