@@ -10,10 +10,28 @@ product_table = product['table']
 product_accessories = product['accessories']
 name = " Jason"
 GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey",)
+num = range(1, 10)
+NUMBER_INPUTS = num
 
 isM1 = False
 isM2 = False
 isM3 = False
+
+# M2 part
+sorry = "Sorry, currently only sell gaming\n" \
+        "            related Chair, Table, LED Light and\n" \
+        "            Computer Accessories\n\n"
+error = "I'm not understand what you mean,\n" \
+        "            please tell me again?\n\n"
+serve = "We will serve you based on your\n" \
+        "            requirement\n\n"
+noStock = "Apology to our dear customers,\n" \
+          "            currently Computer Accessories\n" \
+          "            are no stock.\n" \
+          "            Sorry for inconvenience!\n\n"
+
+# rate = 0
+# pcs = 1
 
 resp = {
 
@@ -37,12 +55,17 @@ resp = {
         "            -> Accessories\n" +
         "         ** Type 'back' to return to Home Page"],
     "m2": [
-        "Welcome to Sales Module \n" + \
-        "            Any question for you? \n"
+        "Welcome to Sales Module \n"
+        "            What products you prefer to buy? \n"
+        "            **Each person able buy max 10 products\n"
+        "            (Enter back to quit)\n"
+        "            A.Chair \n"
+        "            B.Table \n"
+        "            C.Computer accessories\n"
 
     ],
     "m3": [
-        "Welcome to Customer Service Module \n" + \
+        "Welcome to Customer Service Module ~\n" + \
         "            Any question for you? \n" + \
         "         -> Refund \n" + \
         "         -> Corporate S3GF \n" + \
@@ -219,16 +242,38 @@ respM1 = {
     "default": ["Sorry, i dont understand",
                 "please give related information"]
 }
-product1 = {
-    "1": [
-        "1.TTRacing Maxx Gaming Chair\n"
-    ]
+respM2 = {
+    "sales": ["sales"],
+    "a": ["Total amount of chair to buy is?\n"
+          "            (Enter z + number)\n"],
+    "b": ["Total amount of table to buy is?\n"
+          "            (Enter y + number)\n"],
+    "s2": ["{0}".format(noStock)],
+    "s3": ["{0}".format(serve)],
+    "s4": ["{0}".format(sorry)],
+    "z1": ["Total 1 of Chair is RM 120"],
+    "z2": ["Total 2 of Chairs are RM 240"],
+    "z3": ["Total 3 of Chairs are RM 360"],
+    "z4": ["Total 4 of Chairs are RM 480"],
+    "z5": ["Total 5 of Chairs are RM 600"],
+    "z6": ["Total 6 of Chairs are RM 720"],
+    "z7": ["Total 7 of Chairs are RM 840"],
+    "z8": ["Total 8 of Chairs are RM 960"],
+    "z9": ["Total 9 of Chairs are RM 1080"],
+    "z10": ["Total 10 of Chairs are RM 1200"],
+    "y1": ["Total 1 of Table is RM 200"],
+    "y2": ["Total 2 of Tables are RM 400"],
+    "y3": ["Total 3 of Tables are RM 600"],
+    "y4": ["Total 4 of Tables are RM 800"],
+    "y5": ["Total 5 of Tables are RM 1000"],
+    "y6": ["Total 6 of Tables are RM 1200"],
+    "y7": ["Total 7 of Tables are RM 1400"],
+    "y8": ["Total 8 of Tables are RM 1600"],
+    "y9": ["Total 9 of Tables are RM 1800"],
+    "y10": ["Total 10 of Tables are RM 2000"],
+    "default": ["{0}".format(error)]
 }
 
-respM2 = {
-    "sales": [
-        "sales", ]
-}
 respM3 = {
     "how soon will i receive my refund?": [
         "How soon will I receive my refund?\n" + \
@@ -240,6 +285,16 @@ respM3 = {
         "           For more information : https://serious3gamers.wixsite.com/home\n",
     ]
 }
+
+
+def passData(r, ps, p):
+    rateP = r
+    psnameP = "ps"
+    pcsP = p
+    nameS = sales["chairS", "name"]
+    value = pcsP * rateP
+    price = "Total {0} of ".format(pcsP) + "{0} is RM ".format(psnameP) + "{0}".format(value)
+    return price
 
 
 def res(message):
@@ -262,6 +317,7 @@ def res(message):
     elif isM2:
         if message in respM2:
             bot_message = random.choice(respM2[message])
+            print("respM2> {0}".format(message))
         elif message == "back":
             isM1 = False
             isM2 = False
@@ -306,7 +362,6 @@ def res(message):
         else:
             print(message)
             bot_message = random.choice(resp["default"])
-
     return bot_message
 
 
@@ -370,6 +425,21 @@ def real(xtext):
         ytext = "who are suitable for this product"
     elif "clean" in xtext:
         ytext = "how should i clean the chair or table"
+    elif "a" in xtext:
+        ytext = "a"
+        print("a in xtext")
+    elif "b" in xtext:
+        ytext = "b"
+        print("b in xtext")
+    elif "c" in xtext:
+        ytext = "s2"
+        print("c = s2")
+    elif "other" in xtext:
+        ytext = "s4"
+    elif "how many" in xtext:
+        ytext = "s3"
+    elif "m2" in xtext:
+        ytext = "m2"
     else:
         ytext = xtext
     return ytext
