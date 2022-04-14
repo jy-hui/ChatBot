@@ -7,6 +7,14 @@ isM1 = False
 isM2 = False
 isM3 = False
 
+# M2 part
+sorry = "Sorry, currently only sell gaming related \n     Chair, Table, LED Light and Computer Accessories"
+error = "I'm not understand what you mean, please tell me again?"
+serve = "We will serve you based on your requirement"
+noStock = "Apology to our dear customers, currently Computer Accessories are no stock. \n     Sorry for inconvenience!"
+thanks = "Thanks for chatting with me, have a nice day ~ "
+amount = "Please enter the amount of this product in number to buy"
+
 resp = {
 
     "hello": [
@@ -28,6 +36,8 @@ resp = {
     "m2": [
         "Welcome to Sales Module \n" + \
         "            Any question for you? \n"
+        "What products you prefer to buy? (Enter exit to quit)\n"
+        "     1.Chair \n     2.Table \n     3.LED Light \n     4.Computer accessories\n"
 
     ],
     "m3": [
@@ -54,8 +64,15 @@ respM1 = {
         "product", ]
 }
 respM2 = {
-    "sales": [
-        "sales", ]
+    "sales": ["sales"],
+    "s1": ["Total amount to buy is?"],
+    "s2": ["{0}".format(sorry)],
+    "s3": ["{0}".format(serve)],
+    "s4": ["{0}".format(error)],
+    "s5": ["{0}".format(noStock)],
+    "s6": ["{0}".format(thanks)],
+    "s7": ["{0}".format(amount)],
+    "default": ["This is a default message!"]
 }
 respM3 = {
     "how soon will i receive my refund?": [
@@ -151,6 +168,28 @@ def real(xtext):
         ytext = "how soon will i receive my refund?"
     else:
         ytext = xtext
+    return ytext
+
+
+def productSale(xtext):
+    if "chair" in xtext:
+        ytext = "s1"
+    elif "table" in xtext:
+        ytext = "s1"
+    elif "led" in xtext:
+        ytext = "s1"
+    elif "light" in xtext:
+        ytext = "s1"
+    elif "computer" in xtext:
+        ytext = "s5"
+    elif "accessories" in xtext:
+        ytext = "s5"
+    elif "other" in xtext:
+        ytext = "s2"
+    elif "how many" in xtext:
+        ytext = "s3"
+    else:
+        ytext = "s4"
     return ytext
 
 

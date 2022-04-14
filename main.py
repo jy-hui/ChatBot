@@ -60,7 +60,15 @@ def send():
         chatWindow.insert(INSERT, "YOU       : " + my_input + "\n")
         messageWindow.delete(0, END)
         # AI THINK
-        chatWindow.insert(INSERT, "BOT JASON : "+ AI.send_message(AI.real(my_input.lower())) +"\n")
+        if my_input.lower() == "m1":
+            chatWindow.insert(INSERT, "BOT JASON : " + AI.send_message(AI.real(my_input.lower())) + "\n")
+        elif my_input.lower() == "m2":
+            chatWindow.insert(INSERT, "BOT JASON : " + AI.send_message(AI.productSale(my_input.lower())) + "\n")
+        elif my_input.lower() == "m3":
+            chatWindow.insert(INSERT, "BOT JASON : " + AI.send_message(AI.real(my_input.lower())) + "\n")
+        else:
+            chatWindow.insert(INSERT, "BOT JASON : Please enter the correct selection !" + "\n")
+
         chatWindow.yview_pickplace("end")
 
     else:
