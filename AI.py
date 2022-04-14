@@ -10,8 +10,6 @@ product_table = product['table']
 product_accessories = product['accessories']
 name = " Jason"
 GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey",)
-num = range(1, 10)
-NUMBER_INPUTS = num
 
 isM1 = False
 isM2 = False
@@ -29,9 +27,6 @@ noStock = "Apology to our dear customers,\n" \
           "            currently Computer Accessories\n" \
           "            are no stock.\n" \
           "            Sorry for inconvenience!\n\n"
-
-# rate = 0
-# pcs = 1
 
 resp = {
 
@@ -53,7 +48,7 @@ resp = {
         "            -> Chair\n" +
         "            -> Table\n" +
         "            -> Accessories\n" +
-        "         ** Type 'back' to return to Home Page"],
+        "         ** Type 'back' to return to Home Page\n\n"],
     "m2": [
         "Welcome to Sales Module \n"
         "            What products you prefer to buy? \n"
@@ -62,7 +57,7 @@ resp = {
         "            A.Chair \n"
         "            B.Table \n"
         "            C.Computer accessories\n"
-        "         ** Type 'back' to return to Home Page"],
+        "         ** Type 'back' to return to Home Page\n\n"],
     "m3": [
         "Welcome to Customer Service Module ~\n" + \
         "            Any question for you? \n" + \
@@ -70,8 +65,7 @@ resp = {
         "         -> Corporate S3GF \n" + \
         "         -> Contact Us \n" + \
         "         -> More...\n" + \
-        "         ** Type 'back' to return to Home Page"
-
+        "         ** Type 'back' to return to Home Page\n\n"
     ],
     "back": ["Welcome back to the S3GF Shop's Home Page, \n" \
              "            I am the S3GF's Chatbot, Jason \n" \
@@ -79,7 +73,7 @@ resp = {
              "            ~ Furniture Product Module \n-> Press 'm1'\n" \
              "            ~ Sales Module \n-> Press 'm2'\n" \
              "            ~ Customer Service Module \n-> Press 'm3'\n"],
-    "default": ["This is a default message!"]
+    "default": ["{0}".format(error)]
 }
 
 respM1 = {
@@ -244,19 +238,19 @@ respM1 = {
 respM2 = {
     "sales": ["sales"],
     "aa": ["This is all of our chair product,\n" +
-        "            -> " + product_chair[0].get("name") + "\n" +
-        "            -> " + product_chair[1].get("name") + "\n" +
-        "            -> " + product_chair[2].get("name") + "\n" +
-        "            -> " + product_chair[3].get("name") + "\n" +
-        "            -> " + product_chair[4].get("name") + "\n" +
+           "            -> " + product_chair[0].get("name") + "\n" +
+           "            -> " + product_chair[1].get("name") + "\n" +
+           "            -> " + product_chair[2].get("name") + "\n" +
+           "            -> " + product_chair[3].get("name") + "\n" +
+           "            -> " + product_chair[4].get("name") + "\n" +
            "Total amount of chair to buy is?\n"
            "            (Enter z + number)\n"],
     "bb": ["This is all of our table product,\n" +
-        "            -> " + product_table[0].get("name") + "\n" +
-        "            -> " + product_table[1].get("name") + "\n" +
-        "            -> " + product_table[2].get("name") + "\n" +
-        "            -> " + product_table[3].get("name") + "\n" +
-        "            -> " + product_table[4].get("name") + "\n" +
+           "            -> " + product_table[0].get("name") + "\n" +
+           "            -> " + product_table[1].get("name") + "\n" +
+           "            -> " + product_table[2].get("name") + "\n" +
+           "            -> " + product_table[3].get("name") + "\n" +
+           "            -> " + product_table[4].get("name") + "\n" +
            "Total amount of table to buy is?\n"
            "            (Enter y + number)\n"],
     "s2": ["{0}".format(noStock) +
@@ -297,7 +291,8 @@ respM2 = {
 respM3 = {
     "how soon will i receive my refund?": [
         "How soon will I receive my refund?\n" + \
-        "           Refunds will be done via the initial payment mode and may take up to 15 working days. Please note that refund amount is subjected to conditions of the products.\n",
+        "Refunds will be done via the initial payment mode and may take up to 15 working days. Please note that "
+        "refund amount is subjected to conditions of the products.\n",
     ],
     "how to contact to company?": [
         "Contact Us at 012-12345678 for assistance. \n" + \
@@ -305,16 +300,6 @@ respM3 = {
         "           For more information : https://serious3gamers.wixsite.com/home\n",
     ]
 }
-
-
-def passData(r, ps, p):
-    rateP = r
-    psnameP = "ps"
-    pcsP = p
-    nameS = sales["chairS", "name"]
-    value = pcsP * rateP
-    price = "Total {0} of ".format(pcsP) + "{0} is RM ".format(psnameP) + "{0}".format(value)
-    return price
 
 
 def res(message):
