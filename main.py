@@ -6,6 +6,8 @@ from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 from PIL import Image, ImageTk
 
+import AI
+
 name = "Jason"
 isStart = True
 isModule3 = False
@@ -55,13 +57,6 @@ def start():
 
     return text
 
-def customservice():
-    text =''
-    return text
-
-
-
-
 root = Tk()
 
 root.title('Smart 3 Gamers Furniture - Chatbot')
@@ -89,6 +84,13 @@ chatWindow.place(x=5, y=35, height=355, width=385)
 messageWindow = Entry(root, bg='white', font = (20))
 messageWindow.place(x=5, y=400, height=40, width=350)
 
+def customerservice():
+    # chatWindow.insert(INSERT, "BOT Jason : Welcome to Customer Service Module \n" +
+    #                           "            Any question for you? \n" +
+    #                           "            "
+    #                   )
+    chatWindow.insert(INSERT,AI.customerservice())
+
 def send():
 
     if messageWindow.get():
@@ -96,15 +98,15 @@ def send():
         chatWindow.insert(INSERT, "YOU       : " + my_input + "\n")
         messageWindow.delete(0, END)
         # AI THINK
-        if (my_input.lower()=="m1"):
-            isModule1 = True
-            isStart = False
-        elif (my_input.lower()=="m2"):
-                isModule2 = True
-                isStart = False
-        elif (my_input.lower()=="m3"):
-            isModule3 = True
-            isStart = False
+        if my_input.lower()=="m1":
+            customerservice()
+
+        elif my_input.lower()=="m2":
+            customerservice()
+
+        elif my_input.lower()=="m3":
+            customerservice()
+
         else:
             chatWindow.insert(INSERT, "BOT JASON : "+ send_message(real(my_input.lower())) +"\n")
             chatWindow.yview_pickplace("end")
@@ -122,11 +124,11 @@ image1 = PhotoImage(file='S3G.png')
 label2 = Label(root,image = image1,bg='black')
 label2.place(x=340,y=400)
 
-if(isStart):
+if isStart:
     chatWindow.insert(INSERT, start() + "\n")
 
 
-if(isModule3):
-    chatWindow.insert(INSERT, "BOT JASON : " + customservice() + "\n")
+
+    #chatWindow.insert(INSERT, "BOT JASON : " + customservice() + "\n")
 
 root.mainloop()
