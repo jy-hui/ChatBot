@@ -1,8 +1,8 @@
 import random
 import json
 
-#read file
-product_json=open('furniture_data.json','r')
+# read file
+product_json = open('furniture_data.json', 'r')
 product_data = product_json.read()
 product = json.loads(product_data)
 product_chair = product['chair']
@@ -244,10 +244,10 @@ respM1 = {
 }
 respM2 = {
     "sales": ["sales"],
-    "a": ["Total amount of chair to buy is?\n"
-          "            (Enter z + number)\n"],
-    "b": ["Total amount of table to buy is?\n"
-          "            (Enter y + number)\n"],
+    "aa": ["Total amount of chair to buy is?\n"
+           "            (Enter z + number)\n"],
+    "bb": ["Total amount of table to buy is?\n"
+           "            (Enter y + number)\n"],
     "s2": ["{0}".format(noStock)],
     "s3": ["{0}".format(serve)],
     "s4": ["{0}".format(sorry)],
@@ -410,7 +410,12 @@ def real(xtext):
         ytext = "Tomaz Gaming Floorpad"
     elif "led stripe light" in xtext:
         ytext = "LED Strip light"
-
+    elif "chair" in xtext:
+        ytext = "chair"
+    elif "table" in xtext:
+        ytext = "table"
+    elif "accessories" in xtext:
+        ytext = "accessories"
     elif "order" in xtext:
         ytext = "i want to order"
     elif "good" in xtext:
@@ -425,13 +430,13 @@ def real(xtext):
         ytext = "who are suitable for this product"
     elif "clean" in xtext:
         ytext = "how should i clean the chair or table"
-    elif "a" in xtext:
-        ytext = "a"
+    elif "aa" in xtext:
+        ytext = "aa"
         print("a in xtext")
-    elif "b" in xtext:
-        ytext = "b"
+    elif "bb" in xtext:
+        ytext = "bb"
         print("b in xtext")
-    elif "c" in xtext:
+    elif "cc" in xtext:
         ytext = "s2"
         print("c = s2")
     elif "other" in xtext:
