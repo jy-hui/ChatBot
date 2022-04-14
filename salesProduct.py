@@ -21,6 +21,16 @@ resp = {
     "default": ["This is a default message!"]
 }
 
+respM2 = {
+    "1": ["BOT: Total amount to buy is?"],
+    "2": ["BOT: {0}".format(sorry)],
+    "3": ["BOT: {0}".format(serve)],
+    "4": ["BOT: {0}".format(error)],
+    "5": ["BOT: {0}".format(noStock)],
+    "6": ["BOT: {0}".format(thanks)],
+    "7": ["BOT: {0}".format(amount)],
+    "default": ["This is a default message!"]
+}
 
 def res(message):
     if message in resp:
