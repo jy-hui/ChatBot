@@ -1,7 +1,7 @@
 import random
 
 name = " Jason"
-GREET_INPUTS = ("hello","hi","greetings","sup","what's up","hey",)
+GREET_INPUTS = ("hello", "hi", "greetings", "sup", "what's up", "hey",)
 
 isM1 = False
 isM2 = False
@@ -9,8 +9,8 @@ isM3 = False
 
 resp = {
 
-    "hello":[
-        "hi","hey","*nods*", "hi there","hello","I am glad! You are talking to me."
+    "hello": [
+        "hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me."
     ],
 
     "what's your name?": [
@@ -21,55 +21,55 @@ resp = {
         "I am feeling good. How about you?",
         "Not so bad. How about you?"],
 
-    "m1":[
+    "m1": [
         "Welcome to Product Module \n" + "            Any question for you? \n"
 
     ],
     "m2": [
-        "Welcome to Order Module \n" +\
+        "Welcome to Sales Module \n" + \
         "            Any question for you? \n"
 
     ],
     "m3": [
-        "Welcome to Customer Service Module \n" +\
+        "Welcome to Customer Service Module \n" + \
         "            Any question for you? \n" + \
-        "         -> Refund \n" +\
-        "         -> Corporate S3GF \n" +\
-        "         -> Contact Us \n" +\
-        "         -> More...\n"+\
+        "         -> Refund \n" + \
+        "         -> Corporate S3GF \n" + \
+        "         -> Contact Us \n" + \
+        "         -> More...\n" + \
         "         ** Type 'back' to return to Home Page"
-
-
 
     ],
     "back": ["Welcome back to the S3GF Shop's Home Page, \n" \
-           "            I am the S3GF's Chatbot, Jason \n" \
-           "            Please choose one of the module task:\n" \
-           "            ~ Furniture Product Module \n-> Press 'm1'\n" \
-           "            ~ Take Order Module \n-> Press 'm2'\n" \
-           "            ~ Customer Service Module \n-> Press 'm3'\n"],
+             "            I am the S3GF's Chatbot, Jason \n" \
+             "            Please choose one of the module task:\n" \
+             "            ~ Furniture Product Module \n-> Press 'm1'\n" \
+             "            ~ Sales Module \n-> Press 'm2'\n" \
+             "            ~ Customer Service Module \n-> Press 'm3'\n"],
     "default": ["This is a default message!"]
-    }
+}
 
 respM1 = {
     "product": [
-        "product",]
+        "product", ]
 }
 respM2 = {
-    "order": [
-        "order",]
+    "sales": [
+        "sales", ]
 }
 respM3 = {
-    "how soon will i receive my refund?":[
-        "How soon will I receive my refund?\n" +\
+    "how soon will i receive my refund?": [
+        "How soon will I receive my refund?\n" + \
         "           Refunds will be done via the initial payment mode and may take up to 15 working days. Please note that refund amount is subjected to conditions of the products.\n",
     ],
-    "how to contact to company?":[
-        "Contact Us at 012-12345678 for assistance. \n" +\
-        "           Email us at Smart3Gamers@gmail.com\n" +\
+    "how to contact to company?": [
+        "Contact Us at 012-12345678 for assistance. \n" + \
+        "           Email us at Smart3Gamers@gmail.com\n" + \
         "           For more information : https://serious3gamers.wixsite.com/home\n",
     ]
 }
+
+
 def res(message):
     global isM1
     global isM2
@@ -137,6 +137,7 @@ def res(message):
 
     return bot_message
 
+
 def real(xtext):
     if xtext in GREET_INPUTS:
         ytext = "hello"
@@ -152,9 +153,9 @@ def real(xtext):
         ytext = xtext
     return ytext
 
+
 def send_message(message):
-    #print((message)) # if want block the ytext
+    # print((message)) # if want block the ytext
     print(message)
     response = res(message)
     return response
-
