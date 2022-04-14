@@ -7,7 +7,8 @@ from tkinter.scrolledtext import ScrolledText
 from PIL import Image, ImageTk
 
 name = "Jason"
-
+isStart = True
+isModule3 = False
 
 resp = {
     "what's your name?": [
@@ -54,7 +55,9 @@ def start():
 
     return text
 
-
+def customservice():
+    text =''
+    return text
 
 
 
@@ -96,14 +99,16 @@ def send():
         if (my_input.lower()=="m1"):
             isModule1 = True
             isStart = False
-        if (my_input.lower()=="m2"):
-            isModule2 = True
-            isStart = False
-        if (my_input.lower()=="m3"):
+        elif (my_input.lower()=="m2"):
+                isModule2 = True
+                isStart = False
+        elif (my_input.lower()=="m3"):
             isModule3 = True
             isStart = False
-        chatWindow.insert(INSERT, "BOT JASON : "+ send_message(real(my_input.lower())) +"\n")
-        chatWindow.yview_pickplace("end")
+        else:
+            chatWindow.insert(INSERT, "BOT JASON : "+ send_message(real(my_input.lower())) +"\n")
+            chatWindow.yview_pickplace("end")
+
     else:
         print("empty")
     print("clicked")
@@ -116,8 +121,12 @@ image1 = PhotoImage(file='S3G.png')
 
 label2 = Label(root,image = image1,bg='black')
 label2.place(x=340,y=400)
-isStart = True
+
 if(isStart):
     chatWindow.insert(INSERT, start() + "\n")
+
+
+if(isModule3):
+    chatWindow.insert(INSERT, "BOT JASON : " + customservice() + "\n")
 
 root.mainloop()
