@@ -46,9 +46,9 @@ resp = {
     "back": ["Welcome back to the S3GF Shop's Home Page, \n" \
            "            I am the S3GF's Chatbot, Jason \n" \
            "            Please choose one of the module task:\n" \
-           "            ~ Furniture Product Module -> Press 'm1'\n" \
-           "            ~ Take Order Module -> Press 'm2'\n" \
-           "            ~ Customer Service Module -> Press 'm3'\n"],
+           "            ~ Furniture Product Module \n-> Press 'm1'\n" \
+           "            ~ Take Order Module \n-> Press 'm2'\n" \
+           "            ~ Customer Service Module \n-> Press 'm3'\n"],
     "default": ["This is a default message!"]
     }
 
@@ -61,13 +61,14 @@ respM2 = {
         "order",]
 }
 respM3 = {
-    "refund":[
-        " ",
+    "how soon will i receive my refund?":[
+        "How soon will I receive my refund?\n" +\
+        "           Refunds will be done via the initial payment mode and may take up to 15 working days. Please note that refund amount is subjected to conditions of the products.\n",
     ],
     "how to contact to company?":[
         "Contact Us at 012-12345678 for assistance. \n" +\
-        "           Email us at Smart3Gamers@gmail.com" +\
-        "           For more information : https://serious3gamers.wixsite.com/home",
+        "           Email us at Smart3Gamers@gmail.com\n" +\
+        "           For more information : https://serious3gamers.wixsite.com/home\n",
     ]
 }
 def res(message):
@@ -146,6 +147,8 @@ def real(xtext):
         ytext = "how to contact to company?"
     elif "how are" in xtext:
         ytext = "how are you?"
+    elif "refund" in xtext:
+        ytext = "how soon will i receive my refund?"
     else:
         ytext = xtext
     return ytext
