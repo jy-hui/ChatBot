@@ -36,8 +36,8 @@ def restart_program():
 main_menu = Menu(root)
 
 file_menu = Menu(root, tearoff=False)
-file_menu.add_command(label='Restart', command=restart_program)
-file_menu.add_command(label='Quit',command=root.destroy)
+#file_menu.add_command(label='Restart', command=restart_program)
+#file_menu.add_command(label='Quit',command=root.destroy)
 
 main_menu.add_cascade(label='More', menu=file_menu)
 
