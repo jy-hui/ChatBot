@@ -15,9 +15,9 @@ def start():
     text = "BOT JASON : Welcome to the S3GF Shop, \n" \
            "            I am the S3GF's Chatbot, Jason \n" \
            "            Please choose one of the module task:\n" \
-           "            ~ Furniture Product Module -> Press 'm1'\n" \
-           "            ~ Take Order Module -> Press 'm2'\n" \
-           "            ~ Customer Service Module -> Press 'm3'\n"
+           "            ~ Furniture Product Module\n -> Press 'm1'\n" \
+           "            ~ Take Order Module\n -> Press 'm2'\n" \
+           "            ~ Customer Service Module\n -> Press 'm3'\n"
 
     return text
 
