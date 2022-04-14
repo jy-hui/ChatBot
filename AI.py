@@ -1,5 +1,7 @@
 import random
 
+import salesProduct
+
 name = " Jason"
 GREET_INPUTS = ("hello","hi","greetings","sup","what's up","hey",)
 
@@ -57,8 +59,8 @@ respM1 = {
         "product",]
 }
 respM2 = {
-    "order": [
-        "order",]
+    "sale": [
+        "sale",]
 }
 respM3 = {
     "how soon will i receive my refund?":[
@@ -90,7 +92,7 @@ def res(message):
 
     elif isM2:
         if message in respM2:
-            bot_message = random.choice(respM2[message])
+            bot_message = random.choice(salesProduct.respM2[message])
         elif message == "back":
             isM1 = False
             isM2 = False
